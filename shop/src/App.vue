@@ -1,28 +1,41 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="header">header</div>
+    <sidebar class="sidebar">side</sidebar>
+    <div class="main">main</div>
+    <footer class="footer">footer</footer>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: grid; /*son bloques, con inline-grid es un grid que no pega saltos de linea*/
+  grid-template-columns: 50px 100%;
+  grid-template-areas: 
+    "header header"
+    "sidebar main"
+    "footer footer";
+}
+.header{
+  grid-area: header;
+}
+.sidebar{
+  grid-area: sidebar;
+}
+.main{
+  grid-area: main;
+}
+.footer{
+  grid-area: footer;
 }
 </style>
