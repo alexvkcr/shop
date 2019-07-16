@@ -2,6 +2,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
+import Buefy from 'buefy';
+import 'buefy/dist/buefy.css';
 
 
 import Index from './components/Index.vue'
@@ -9,6 +11,7 @@ import Items from './components/Items.vue'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
+Vue.use(Buefy)
 
 const routes = [
   { path: '/', component: Index },

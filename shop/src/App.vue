@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="header">header</div>
+    <app-header class="header"></app-header>
     <aside class="sidebar">side
       <ul>
         <li><router-link to="/">Inicio</router-link></li>
@@ -15,21 +15,31 @@
 
 <script>
 
+import AppHeader from './components/AppHeader.vue'
+
 export default {
   name: 'app',
+  components: {
+    AppHeader
+  }
 }
 </script>
 
 <style>
 #app {
+  position: absolute;
+  left: 0;
+  top: 0;
+
   display: grid; /*son bloques, con inline-grid es un grid que no pega saltos de linea*/
-  grid-template-columns: 150px 100%;
+  grid-template-columns: 100%;
   grid-template-areas: 
-    "header header"
-    "sidebar main"
-    "footer footer";
+    "header"
+    "main"
+    "footer";
 }
 .header{
+  width: 100vw;
   grid-area: header;
 }
 .sidebar{
@@ -40,5 +50,14 @@ export default {
 }
 .footer{
   grid-area: footer;
+}
+@media screen and (min-width: 490px) {
+  #app {
+    grid-template-columns: 150px 100%;
+    grid-template-areas: 
+      "header header"
+      "sidebar main"
+      "footer footer";
+  }
 }
 </style>
