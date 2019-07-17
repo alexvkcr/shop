@@ -1,14 +1,9 @@
 <template>
   <div id="app">
     <app-header class="header"></app-header>
-    <aside class="sidebar">side
-      <ul>
-        <li><router-link to="/">Inicio</router-link></li>
-        <li><router-link to="/items">Artículos</router-link></li>
-      </ul>
-    </aside>
+    <side-bar class="side-bar"></side-bar>
     <div class="main">main<router-view></router-view></div>
-    <footer class="footer">footer</footer>
+    <footer class="footr">footer</footer>
   </div>
 </template>
 
@@ -16,11 +11,12 @@
 <script>
 
 import AppHeader from './components/AppHeader.vue'
+import SideBar from './components/SideBar.vue'
 
 export default {
   name: 'app',
   components: {
-    AppHeader
+    AppHeader, SideBar
   }
 }
 </script>
