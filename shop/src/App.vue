@@ -3,7 +3,7 @@
     <app-header class="header"></app-header>
     <side-bar class="side-bar"></side-bar>
     <div class="main">main<router-view></router-view></div>
-    <footer class="footr">footer</footer>
+    <footer class="footer">footer</footer>
   </div>
 </template>
 

@@ -1,11 +1,11 @@
 <template>
   <div id="SideBar">
-    <aside class="sidebar">side
-      <ul>
-        <li><router-link to="/">Inicio</router-link></li>
-        <li><router-link to="/items">Artículos</router-link></li>
-      </ul>
-    </aside>
+    <b-menu>
+      <b-menu-list label="Menú">
+        <router-link to="/"><b-menu-item label="Inicio"></b-menu-item></router-link>
+        <router-link to="/items"><b-menu-item label="Artículos"></b-menu-item></router-link>
+      </b-menu-list>
+    </b-menu>
   </div>
 </template>
 
@@ -19,11 +19,12 @@ export default {
 
 <style>
 #SideBar {
+  padding: 1px 10px;
 }
 
 @media screen and (max-width: 490px) {
-  @SideBar{
-    display: unset;
+  #SideBar{
+    display: none;
   }
 }
 </style>
