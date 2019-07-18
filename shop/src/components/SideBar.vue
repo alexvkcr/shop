@@ -2,19 +2,30 @@
   <div id="SideBar">
     <b-menu>
       <b-menu-list label="Menú">
-        <router-link to="/"><b-menu-item label="Inicio"></b-menu-item></router-link>
-        <router-link to="/items"><b-menu-item label="Artículos"></b-menu-item></router-link>
+        <div class="category">
+          <b-button tag="router-link" to="/" v-bind:type="{'is-success': atHome}">Inicio</b-button>
+        </div>
+        <div class="category">
+          <b-button tag="router-link" to="/items" v-bind:type="{'is-success': atItems}">Artículos</b-button>
+        </div>
       </b-menu-list>
     </b-menu>
   </div>
 </template>
 
 <script>
-
-
 export default {
-  name: 'SideBar'
-}
+  name: "SideBar",
+  methods: {
+    clickMe() {
+      console.log("Clicked!!");
+    }
+  },
+  computed: {
+    atHome(){ return this.$route.path == "/"},
+    atItems(){ return this.$route.path == "/items"}
+  }
+};
 </script>
 
 <style>
@@ -22,8 +33,12 @@ export default {
   padding: 1px 10px;
 }
 
+.category{
+  margin: 1vh
+}
+
 @media screen and (max-width: 490px) {
-  #SideBar{
+  #SideBar {
     display: none;
   }
 }
