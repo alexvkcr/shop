@@ -3,7 +3,7 @@
     <app-header class="header"></app-header>
     <side-bar class="side-bar"></side-bar>
     <div class="main">main<router-view></router-view></div>
-    <footer class="footer">footer</footer>
+    <app-footer class="footer"></app-footer>
   </div>
 </template>
 
@@ -12,11 +12,12 @@
 
 import AppHeader from './components/AppHeader.vue'
 import SideBar from './components/SideBar.vue'
+import AppFooter from './components/AppFooter.vue'
 
 export default {
   name: 'app',
   components: {
-    AppHeader, SideBar
+    AppHeader, SideBar, AppFooter
   }
 }
 </script>
