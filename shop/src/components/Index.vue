@@ -1,6 +1,6 @@
 <template>
   <div id="index">
-    index
+    Sección de presentación
   </div>
 </template>
 
