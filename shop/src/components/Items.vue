@@ -1,6 +1,6 @@
 <template>
   <div id="items">
-    items
+    Artículos y Headquarters
   </div>
 </template>
 
