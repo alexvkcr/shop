@@ -8,6 +8,9 @@
         <div class="category">
           <b-button tag="router-link" to="/items" v-bind:type="{'is-success': atItems}">Artículos</b-button>
         </div>
+        <div class="category">
+          <b-button tag="router-link" to="/headquarters" v-bind:type="{'is-success': atHeadquarters}">Dónde estamos</b-button>
+        </div>
       </b-menu-list>
     </b-menu>
   </div>
@@ -23,7 +26,8 @@ export default {
   },
   computed: {
     atHome(){ return this.$route.path == "/"},
-    atItems(){ return this.$route.path == "/items"}
+    atItems(){ return this.$route.path == "/items"},
+    atHeadquarters(){ return this.$route.path == "/headquarters"}
   }
 };
 </script>
@@ -35,6 +39,10 @@ export default {
 
 .category{
   margin: 1vh
+}
+
+div .menu-list a{
+  padding: 0.5em 0.1em;
 }
 
 @media screen and (max-width: 490px) {

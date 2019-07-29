@@ -47,6 +47,7 @@ export default {
 }
 .footer{
   grid-area: footer;
+  padding: 3rem 1rem 1rem !important;
 }
 @media screen and (min-width: 490px) {
   #app {

@@ -15,7 +15,8 @@ Vue.use(Buefy)
 
 const routes = [
   { path: '/', component: Index },
-  { path: '/items', component: Items }
+  { path: '/items', component: Items },
+  { path: '/headquarters', component: Items }
 ]
 
 const router = new VueRouter({
