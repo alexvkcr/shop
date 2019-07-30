@@ -1,6 +1,6 @@
 <template>
   <div id="items">
-    Artículos y Headquarters
+    Artículos (ya hay scroll)
   </div>
 </template>
 
