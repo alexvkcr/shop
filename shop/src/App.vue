@@ -24,12 +24,13 @@ export default {
 
 <style>
 #app {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
-
+  height: 100%;
   display: grid; /*son bloques, con inline-grid es un grid que no pega saltos de linea*/
   grid-template-columns: 100%;
+  grid-template-rows: 10vh 65vh 25vh;
   grid-template-areas: 
     "header"
     "main"
@@ -44,6 +45,7 @@ export default {
 }
 .main{
   grid-area: main;
+  overflow-y:auto;
 }
 .footer{
   grid-area: footer;
@@ -52,6 +54,7 @@ export default {
 @media screen and (min-width: 490px) {
   #app {
     grid-template-columns: 150px 100%;
+    grid-template-rows: 10vh 65vh 25vh;
     grid-template-areas: 
       "header header"
       "sidebar main"
