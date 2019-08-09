@@ -5,7 +5,7 @@
   :center="{lat:40.301769, lng:-3.442696}"
   :zoom="14"
   map-type-id="roadmap"
-  style="width: 500px; height: 300px"
+  style="width: 90%; height: 280px"
 >
   <GmapMarker
     :key="index"
@@ -32,6 +32,15 @@ export default {
 </script>
 
 <style>
-#headquarters {
+#headquarters{
+  text-align: center;
+}
+#headquarters .vue-map-container .vue-map {
+  left: 20px;
+}
+
+@media screen and (min-width: 321px) {
+  .vue-map {;
+  }
 }
 </style>

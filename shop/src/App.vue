@@ -45,6 +45,7 @@ export default {
 .main{
   grid-area: main;
   overflow-y:auto;
+  padding: 10px;
 }
 .footer{
   grid-area: footer;
@@ -52,7 +53,7 @@ export default {
 }
 @media screen and (min-width: 490px) {
   #app {
-    grid-template-columns: 150px 100%;
+    grid-template-columns: 150px calc(100% - 150px);
     grid-template-rows: 10vh 65vh 25vh;
     grid-template-areas: 
       "header header"

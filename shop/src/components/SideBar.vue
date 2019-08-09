@@ -34,6 +34,7 @@ export default {
 
 <style>
 #SideBar {
+  display: none;
   padding: 1px 10px;
 }
 
@@ -43,11 +44,12 @@ export default {
 
 div .menu-list a{
   padding: 0.5em 0.1em;
+  font-size: 0.9rem;
 }
 
-@media screen and (max-width: 490px) {
+@media screen and (min-width: 490px) {
   #SideBar {
-    display: none;
+    display: unset;
   }
 }
 </style>
