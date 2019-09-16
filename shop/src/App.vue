@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <app-header class="header"></app-header>
     <side-bar class="side-bar"></side-bar>
     <div class="main">main<router-view></router-view></div>
     <app-footer class="footer"></app-footer>
@@ -27,6 +28,7 @@ export default {
   left: 0;
   top: 0;
   height: 100%;
+  width: 100%;
   display: grid; /*son bloques, con inline-grid es un grid que no pega saltos de linea*/
   grid-template-columns: 100%;
   grid-template-rows: 10vh 65vh 25vh;
