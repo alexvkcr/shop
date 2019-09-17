@@ -13,6 +13,7 @@
     "@vue/cli": "^3.9.3",
     "buefy": "^0.7.10",
     "core-js": "^2.6.5",
+    "express": "^4.17.1",
     "vue": "^2.6.10",
     "vue-router": "^3.0.7",
     "vue2-google-maps": "^0.10.7"
