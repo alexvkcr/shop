@@ -15,6 +15,7 @@
     "core-js": "^2.6.5",
     "express": "^4.17.1",
     "vue": "^2.6.10",
+    "vue-cli-plugin-express": "^1.0.2",
     "vue-router": "^3.0.7",
     "vue2-google-maps": "^0.10.7"
   },
@@ -64,5 +65,19 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "description": "```\r npm install\r ```",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexvkcr/shop.git"
+  },
+  "author": "alexvkcr@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexvkcr/shop/issues"
+  },
+  "homepage": "https://github.com/alexvkcr/shop#readme"
 }
