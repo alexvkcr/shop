@@ -9,6 +9,10 @@ npm install
 ```
 npm run serve
 ```
+### Throws express Server to supply REST API
+```
+npm run express
+```
 
 ### Compiles and minifies for production
 ```
