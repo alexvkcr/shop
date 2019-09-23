@@ -14,6 +14,12 @@ import AppHeader from './components/AppHeader.vue'
 import SideBar from './components/SideBar.vue'
 import AppFooter from './components/AppFooter.vue'
 
+const api = "localhost:3000/"
+
+export const ShopConstants = Object.freeze({
+    API_ITEMS: `${api}items`,
+});
+
 export default {
   name: 'app',
   components: {
