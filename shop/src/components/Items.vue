@@ -18,7 +18,7 @@ export default {
   },
   mounted () {
     axios
-      .get(ShopConstants.API_ITEMS || "https://localhost:3000/items")
+      .get(ShopConstants.API_ITEMS || "http://localhost:3000/items")
       .then(response => (this.items= response))
   }
 }

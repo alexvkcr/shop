@@ -1,7 +1,9 @@
 import express from 'express';
+import cors from 'cors';
 
 export default (app, http) => {
  app.use(express.json());
+ app.use(cors())
  
  //GET
  app.get('/foo', (req, res) => {
