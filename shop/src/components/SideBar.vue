@@ -20,7 +20,7 @@
 export default {
   name: "SideBar",
   methods: {
-    clickMe() {
+    clickMe() {// eslint-disable-next-line
       console.log("Clicked!!");
     }
   },
