@@ -1,5 +1,5 @@
 <template>
-  <div id="headquarters">
+  <div id="Headquarters">
     Puedes encontrarnos aquí
     <GmapMap
   :center="{lat:40.301769, lng:-3.442696}"
@@ -22,7 +22,7 @@
 <script>
 
 export default {
-  name: 'headquarters',
+  name: 'Headquarters',
   data: function(){
     return {
       markers: [{position: {lat:40.301769, lng:-3.442696}}]
