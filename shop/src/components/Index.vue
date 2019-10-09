@@ -1,5 +1,5 @@
 <template>
-  <div id="index">
+  <div id="Index">
     Sección de presentación
   </div>
 </template>
@@ -7,7 +7,7 @@
 <script>
 
 export default {
-  name: 'index'
+  name: 'Index'
 }
 </script>
 

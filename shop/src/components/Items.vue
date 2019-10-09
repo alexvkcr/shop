@@ -1,5 +1,5 @@
 <template>
-  <div id="items">
+  <div id="Items">
     Artículos (ya hay scroll)
     <p>{{ items }}</p>
   </div>
@@ -10,7 +10,7 @@ import ShopConstants from '../App'
 const axios = require('axios');
 
 export default {
-  name: 'items',
+  name: 'Items',
   data () {
     return {
       items: null
