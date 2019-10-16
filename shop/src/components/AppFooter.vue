@@ -15,7 +15,7 @@
 
 <script>
 
-import BIcon from 'buefy'
+import { BIcon } from 'buefy'
 
 export default {
   name: "AppFooter",
