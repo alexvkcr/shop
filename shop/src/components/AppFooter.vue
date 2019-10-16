@@ -15,13 +15,8 @@
 
 <script>
 
-import { BIcon } from 'buefy'
-
 export default {
   name: "AppFooter",
-  components: {
-    BIcon
-  },
   methods: {
     openTwitter() {
       window.open("https://www.twitter.com/alex_vkcr");

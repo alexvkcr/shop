@@ -2,20 +2,20 @@
   <div id="Headquarters">
     Puedes encontrarnos aquí
     <GmapMap
-  :center="{lat:40.301769, lng:-3.442696}"
-  :zoom="14"
-  map-type-id="roadmap"
-  style="width: 90%; height: 280px"
->
-  <GmapMarker
-    :key="index"
-    v-for="(m, index) in markers"
-    :position="m.position"
-    :clickable="true"
-    :draggable="true"
-    @click="center=m.position"
-  />
-</GmapMap>
+      :center="{lat:40.301769, lng:-3.442696}"
+      :zoom="14"
+      map-type-id="roadmap"
+      style="width: 90%; height: 280px"
+    >
+      <GmapMarker
+        :key="index"
+        v-for="(m, index) in markers"
+        :position="m.position"
+        :clickable="true"
+        :draggable="true"
+        @click="center=m.position">
+      </GmapMarker>
+    </GmapMap>
   </div>
 </template>
 
