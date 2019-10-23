@@ -22,7 +22,7 @@ localVue.use(Buefy)
 describe('SideBar.vue', () => {
   it('has the proper id', () => {
     const id = 'SideBar'
-    const wrapper = shallowMount(SideBar,{localVue, 
+    const wrapper = shallowMount(SideBar,{localVue, router,
       name: 'SideBar'
     })
     expect(wrapper.attributes().id).toContain(id)
