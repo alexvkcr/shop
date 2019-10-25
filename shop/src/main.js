@@ -28,9 +28,9 @@ Vue.use(VueGoogleMaps, {
 })
 
 const routes = [
-  { path: '/', component: Index },
-  { path: '/items', component: Items },
-  { path: '/headquarters', component: Headquarters }
+  { name: 'index', path: '/', component: Index },
+  { name: 'items', path: '/items', component: Items },
+  { name: 'headquarters', path: '/headquarters', component: Headquarters }
 ]
 
 const router = new VueRouter({
