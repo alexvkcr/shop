@@ -11,11 +11,11 @@ export default {
   props: {id: String,
           name: String,
           description: String,
-          allergies: {
+          allergens: {
             type: Array,
             required: true,
             default: [],
-            validator: allergies => (!Array.isArray(allergies)) ? false : ! allergies.some(it => typeof(it)!='string')
+            validator: allergens => (!Array.isArray(allergens)) ? false : ! allergens.some(it => typeof(it)!='string')
           },
           price: Number,
           }
