@@ -1,16 +1,19 @@
 <template>
   <div id="Items">
-    Artículos (ya hay scroll)
-    <p>{{ items }}</p>
+      <item v-for="item in items" :key="item.id" :object="item"></item>
   </div>
 </template>
 
 <script>
 import ShopConstants from '../App'
+import Item from './Item.vue' 
 const axios = require('axios');
 
 export default {
   name: 'Items',
+  components: {
+    Item
+  },
   data () {
     return {
       items: null
@@ -19,7 +22,7 @@ export default {
   mounted () {
     axios
       .get(ShopConstants.API_ITEMS || "http://localhost:3000/items")
-      .then(response => (this.items= response))
+      .then(response => (this.items= response.data.msg))
   }
 }
 </script>

@@ -1,6 +1,10 @@
 <template>
   <div id="Item">
-    id{}
+    <p>{{ object.id }}: {{ object.name }}</p>
+    <p>{{ object.description }}</p>
+    <ul>
+      <li v-for="al in object.allergens" :key="al">{{ al }}</li>
+    </ul>
   </div>
 </template>
 
@@ -8,17 +12,20 @@
 
 export default {
   name: 'Items',
-  props: {id: String,
-          name: String,
-          description: String,
-          allergens: {
-            type: Array,
-            required: true,
-            default: [],
-            validator: allergens => (!Array.isArray(allergens)) ? false : ! allergens.some(it => typeof(it)!='string')
-          },
-          price: Number,
-          }
+  props: {
+    object: {
+        id: String,
+        name: String,
+        description: String,
+        allergens: {
+          type: Array,
+          required: true,
+          default: [],
+          validator: allergens => (!Array.isArray(allergens)) ? false : ! allergens.some(it => typeof(it)!='string')
+        },
+        price: Number,
+        }
+    }
 }
 </script>
 
