@@ -32,6 +32,7 @@ export default {
   grid-template-areas: 
     "empresa autor";
   font-size: 0.8em;
+  border-top: 0.2px #cacaca solid;
 }
 
 .empresa {
