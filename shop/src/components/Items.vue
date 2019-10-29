@@ -28,6 +28,10 @@ export default {
 </script>
 
 <style>
-#items {
+#Items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
 }
 </style>
