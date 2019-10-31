@@ -1,6 +1,6 @@
 <template>
   <div id="Item">
-    <p>{{ object.id }}: {{ object.name }}</p>
+    <p class="title">{{ object.id }}: {{ object.name }}</p>
     <p>{{ object.description }}</p>
     <ul>
       <li v-for="al in object.allergens" :key="al">{{ al }}</li>
@@ -36,5 +36,8 @@ export default {
   background-color: #fafafa;  
   border-radius: 7%;
   margin:0 10px 10px; 
+}
+.title{
+
 }
 </style>
