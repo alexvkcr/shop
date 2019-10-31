@@ -1,10 +1,18 @@
 <template>
   <div id="Item">
-    <p class="title">{{ object.id }}: {{ object.name }}</p>
-    <p>{{ object.description }}</p>
-    <ul>
-      <li v-for="al in object.allergens" :key="al">{{ al }}</li>
-    </ul>
+    <p class="title">{{ thing.id }}: {{ thing.name }}</p>
+    <p>{{ thing.description }}</p>
+    
+    <b-tooltip
+      :label="thing.allergens"
+      multilined>
+      
+      <b-icon   class="allergies-icon"
+          icon="playlist-remove"
+          size="is-medium">
+      </b-icon>
+
+    </b-tooltip>
   </div>
 </template>
 
@@ -13,7 +21,7 @@
 export default {
   name: 'Items',
   props: {
-    object: {
+    thing: {
         id: String,
         name: String,
         description: String,
@@ -38,6 +46,10 @@ export default {
   margin:0 10px 10px; 
 }
 .title{
+  margin: 5px unset 10px 10px;
+}
 
+.allergies-icon{
+  margin: 90% 90% 5% 5%;
 }
 </style>
