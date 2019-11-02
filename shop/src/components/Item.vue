@@ -4,7 +4,9 @@
     <p>{{ thing.description }}</p>
     
     <b-tooltip
-      :label="thing.allergens"
+      :label='thing.allergens.toString()'
+      type="is-light"
+      size="is-small"
       multilined>
       
       <b-icon   class="allergies-icon"
@@ -33,7 +35,7 @@ export default {
         },
         price: Number,
         }
-    }
+    }  
 }
 </script>
 
