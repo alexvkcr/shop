@@ -1,8 +1,8 @@
 <template>
   <div id="Item" :item-id='thing.id'>
     <p class="title">{{ thing.name }}</p>
-    <p>{{ thing.description }}</p>
-    <ImgLoader :defaultImgUrl="'error.png'" :imgUrl="thing.img" />
+    <ImgLoader class="img" :defaultImgUrl="'error.png'" :imgUrl="thing.img" />
+    <p class="description">{{ thing.description }}</p>
 
     
     <b-tooltip class="allergies-icon"
@@ -55,11 +55,25 @@ export default {
   margin:0 10px 10px; 
 }
 .title{
+  text-align: center;
   margin: 5px unset 10px 10px;
 }
 
+.img img{
+  padding: 0 3em;
+}
+
+.description{
+  width: 80%;
+  position: relative;
+  bottom: -30px;
+  left: 5px;
+}
+
 .allergies-icon{
-  margin: auto 5% auto 90%;
+  position: relative;
+  left: 90%;
+  bottom: 1px;
 }
 .b-tooltip.is-top.is-multiline.is-small:after{
   color: white; 
