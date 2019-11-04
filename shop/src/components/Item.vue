@@ -2,6 +2,7 @@
   <div id="Item" :item-id='thing.id'>
     <p class="title">{{ thing.name }}</p>
     <p>{{ thing.description }}</p>
+    <img :src='thing.img' alt="imagen del item">
     
     <b-tooltip
       :label='thing.allergens.toString()'
@@ -34,6 +35,7 @@ export default {
           validator: allergens => (!Array.isArray(allergens)) ? false : ! allergens.some(it => typeof(it)!='string')
         },
         price: Number,
+        img: String
         }
     }  
 }
