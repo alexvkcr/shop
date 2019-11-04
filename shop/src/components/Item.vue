@@ -1,6 +1,6 @@
 <template>
-  <div id="Item">
-    <p class="title">{{ thing.id }}: {{ thing.name }}</p>
+  <div id="Item" :item-id='thing.id'>
+    <p class="title">{{ thing.name }}</p>
     <p>{{ thing.description }}</p>
     
     <b-tooltip
