@@ -2,15 +2,16 @@
   <div id="Item" :item-id='thing.id'>
     <p class="title">{{ thing.name }}</p>
     <p>{{ thing.description }}</p>
-    <img :src='thing.img' alt="imagen del item">
+    <ImgLoader :defaultImgUrl="'error.png'" :imgUrl="thing.img" />
+
     
-    <b-tooltip
+    <b-tooltip class="allergies-icon"
       :label='thing.allergens.toString()'
       type="is-light"
       size="is-small"
       multilined>
       
-      <b-icon   class="allergies-icon"
+      <b-icon
           icon="playlist-remove"
           size="is-medium">
       </b-icon>
@@ -20,9 +21,13 @@
 </template>
 
 <script>
+import ImgLoader from 'vue2-image-loader'
 
 export default {
   name: 'Items',
+  components:{
+    ImgLoader
+  },
   props: {
     thing: {
         id: String,
@@ -54,6 +59,6 @@ export default {
 }
 
 .allergies-icon{
-  margin: 90% 90% 5% 5%;
+  margin: auto 5% auto 90%;
 }
 </style>
