@@ -61,4 +61,8 @@ export default {
 .allergies-icon{
   margin: auto 5% auto 90%;
 }
+.b-tooltip.is-top.is-multiline.is-small:after{
+  color: white; 
+  background: #23d160;
+}
 </style>
