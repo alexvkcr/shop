@@ -29,7 +29,6 @@ export default {
 
 <style>
 #Items {
-  width: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;

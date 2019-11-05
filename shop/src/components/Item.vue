@@ -49,7 +49,7 @@ export default {
 <style>
 #Item {
   width: 20em;
-  max-width: 80vw;
+  max-width: 70vw;
   background-color: #fafafa;  
   border-radius: 7%;
   margin:0 10px 10px; 
