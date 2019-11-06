@@ -53,6 +53,7 @@ export default {
 .main{
   grid-area: main;
   overflow-y:auto;
+  overflow-x: hidden;
   padding: 10px;
 }
 .footer{
