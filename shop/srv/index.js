@@ -24,7 +24,7 @@ export default (app, http) => {
 function getItems() {
     let item = { id: 0, name: '', description: '', allergens: [], price: '', img: '' }
     let items = []
-    items.push(Object.assign({}, item, { id: 1, name: 'Bollito', description: 'de Crema', allergens: ['Gluten'], price: 30, img: 'img/palmera.jpg' }))
+    items.push(Object.assign({}, item, { id: 1, name: 'Bollito', description: 'de Crema', allergens: ['Gluten'], price: 30, img: '../assets/img/palmera.jpg' }))
     items.push(Object.assign({}, item, { id: 2, name: 'Palmera', description: 'de Chocolate', allergens: ['Gluten'], price: 30, img: 'img/palmera.jpg' }))
     items.push(Object.assign({}, item, { id: 3, name: 'Palmera', description: 'de Nata', allergens: ['Gluten', 'Leche'], price: 30, img: 'img/palmera.jpg' }))
     items.push(Object.assign({}, item, { id: 4, name: 'Palmera', description: 'de chocolate', allergens: ['Gluten'], price: 30, img: 'img/palmera.jpg' }))

@@ -1,7 +1,8 @@
 <template>
   <div id="Item" :item-id='thing.id'>
     <p class="title">{{ thing.name }}</p>
-    <ImgLoader class="img" :defaultImgUrl="'error.png'" :imgUrl="thing.img" />
+    <!--<ImgLoader class="img" :defaultImgUrl="'error.png'" :imgUrl="thing.img" />-->
+    <img :src='thing.img' alt="Imagen del Item">
     <p class="description">{{ thing.description }}</p>
 
     
@@ -26,7 +27,7 @@ import ImgLoader from 'vue2-image-loader'
 export default {
   name: 'Items',
   components:{
-    ImgLoader
+    /*ImgLoader*/
   },
   props: {
     thing: {
