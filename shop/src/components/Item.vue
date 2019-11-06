@@ -3,6 +3,7 @@
     <p class="title">{{ thing.name }}</p>
     <!--<ImgLoader class="img" :defaultImgUrl="'error.png'" :imgUrl="thing.img" />-->
     <img :src='thing.img' alt="Imagen del Item">
+    <!--<img src="../assets/logo.png">-->
     <p class="description">{{ thing.description }}</p>
 
     
