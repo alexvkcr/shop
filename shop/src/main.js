@@ -5,6 +5,7 @@ import VueRouter from 'vue-router'
 import Buefy from 'buefy';
 import 'buefy/dist/buefy.css';
 import * as VueGoogleMaps from 'vue2-google-maps';
+import VueImg from 'v-img'
 
 
 import Index from './components/Index.vue'
@@ -27,6 +28,7 @@ Vue.use(VueGoogleMaps, {
         // v: '3.26',
     }
 })
+Vue.use(VueImg)
 
 const store = new Vuex.Store({
     state: {

@@ -1,9 +1,7 @@
 <template>
   <div id="Item" :item-id='thing.id'>
     <p class="title">{{ thing.name }}</p>
-    <!--<ImgLoader class="img" :defaultImgUrl="'error.png'" :imgUrl="thing.img" />-->
-    <img :src='thing.img' alt="Imagen del Item">
-    <!--<img src="../assets/logo.png">-->
+    <img v-img="{title: thing.name}" :src="require(`@/assets/${thing.img}`)" :alt="`Imagen de ${thing.name}`" >
     <p class="description">{{ thing.description }}</p>
 
     
@@ -23,13 +21,9 @@
 </template>
 
 <script>
-import ImgLoader from 'vue2-image-loader'
 
 export default {
   name: 'Items',
-  components:{
-    /*ImgLoader*/
-  },
   props: {
     thing: {
         id: String,
