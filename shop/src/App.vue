@@ -53,7 +53,6 @@ export default {
 .main{
   grid-area: main;
   overflow-y:auto;
-  overflow-x: hidden;
   padding: 10px;
 }
 .footer{
@@ -62,7 +61,7 @@ export default {
 }
 @media screen and (min-width: 490px) {
   #app {
-    grid-template-columns: 150px calc(100% - 150px);
+    grid-template-columns: 150px calc(100vw - 150px);
     grid-template-rows: 10vh 65vh 25vh;
     grid-template-areas: 
       "header header"
@@ -72,7 +71,7 @@ export default {
 }
 /*Section for the custom scrollbar*/
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0.5vw;
 }
 
 /* Track */
