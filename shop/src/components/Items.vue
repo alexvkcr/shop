@@ -33,5 +33,6 @@ export default {
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: space-around;
+  margin-right: 2.15vw;
 }
 </style>
