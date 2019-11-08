@@ -6,7 +6,8 @@
 
 <script>
 import ShopConstants from '../App'
-import Item from './Item.vue' 
+import Item from './Item.vue'
+
 const axios = require('axios');
 
 export default {

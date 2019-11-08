@@ -1,5 +1,7 @@
 <template>
-  <div id="Item" :item-id='thing.id'>
+  <div id="Item" :item-id='thing.id' 
+    @mouseover="mouseIn(thing.id)"
+    @mouseleave="mouseOut(thing.id)">
     <p class="title">{{ thing.name }}</p>
     <img v-img="{title: thing.name}" :src="require(`@/assets/${thing.img}`)" :alt="`Imagen de ${thing.name}`" >
     <p class="description">{{ thing.description }}</p>
@@ -38,7 +40,24 @@ export default {
         price: Number,
         img: String
         }
-    }  
+    },
+    data(){
+      img_amplified: false;//It'll be used to set wheather it'll need expansion or not
+    },
+    methods:{
+      mouseIn(id){// eslint-disable-next-line
+        console.log('in '+ id)
+        setTimeout(this.expand,5000)
+      },
+      mouseOut(id){// eslint-disable-next-line
+        console.log('out '+ id)
+      },
+      expand(){
+        let img = document.querySelector('img')// eslint-disable-next-line
+        console.log(img.width)
+      }
+
+    }
 }
 </script>
 
@@ -48,6 +67,7 @@ export default {
   max-width: 70vw;
   background-color: #fafafa;  
   border-radius: 7%;
+  border: 1px solid #ededed;
   margin:0 10px 10px; 
 }
 .title{
@@ -55,7 +75,7 @@ export default {
   margin: 5px unset 10px 10px;
 }
 
-.img img{
+img{
   padding: 0 3em;
 }
 
