@@ -41,19 +41,33 @@ export default {
         img: String
         }
     },
-    data(){
-      img_amplified: false;//It'll be used to set wheather it'll need expansion or not
+    data:()=> {
+      return {img_amplified: false//It'll be used to set wheather it'll need expansion or not
+      }
     },
     methods:{
-      mouseIn(id){// eslint-disable-next-line
-        console.log('in '+ id)
-        setTimeout(this.expand,5000)
+      mouseIn(id){
+        if(!this.img_amplified){// eslint-disable-next-line
+          console.log('in '+ id)
+          setTimeout(this.expand(id),5000)
+          this.img_amplified=true
+        }
       },
-      mouseOut(id){// eslint-disable-next-line
-        console.log('out '+ id)
+      mouseOut(id){
+        if(this.img_amplified){// eslint-disable-next-line
+          console.log('out '+ id)
+          setTimeout(this.contract(id),5000)
+          this.img_amplified=false
+        }
       },
-      expand(){
+      expand(id){
         let img = document.querySelector('img')// eslint-disable-next-line
+          console.log('expand '+ id)// eslint-disable-next-line
+        console.log(img.width)
+      },
+      contract(id){
+        let img = document.querySelector('img')// eslint-disable-next-line
+          console.log('contract '+ id)// eslint-disable-next-line
         console.log(img.width)
       }
 
