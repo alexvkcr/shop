@@ -1,9 +1,9 @@
 <template>
-  <div id="Item" :item-id='thing.id' 
+  <div id="Item"  
     @mouseover="mouseIn(thing.id)"
     @mouseleave="mouseOut(thing.id)">
     <p class="title">{{ thing.name }}</p>
-    <img v-img="{title: thing.name}" :src="require(`@/assets/${thing.img}`)" :alt="`Imagen de ${thing.name}`" >
+    <img v-img="{title: thing.name}" :item-id='thing.id' :src="require(`@/assets/${thing.img}`)" :alt="`Imagen de ${thing.name}`" >
     <p class="description">{{ thing.description }}</p>
 
     
@@ -42,7 +42,9 @@ export default {
         }
     },
     data:()=> {
-      return {img_amplified: false//It'll be used to set wheather it'll need expansion or not
+      return {img_amplified: false,//It'll be used to set wheather it'll need expansion or not
+              original_width: 0,
+              original_height: 0,
       }
     },
     methods:{
@@ -61,14 +63,22 @@ export default {
         }
       },
       expand(id){
-        let img = document.querySelector('img')// eslint-disable-next-line
-          console.log('expand '+ id)// eslint-disable-next-line
-        console.log(img.width)
+        let img = document.querySelector(`#Item > img[item-id='${id}']`)
+        this.original_width = img.width
+        debugger
+        console.log('id '+id+' antes')
+        console.log('img.width '+img.width)
+        document.querySelector(`#Item > img[item-id='${id}']`).width = this.original_width * 2
+        console.log('id '+id+' despues')
+        console.log('img.width '+img.width)
+        this.original_height = img.height
+        
       },
       contract(id){
-        let img = document.querySelector('img')// eslint-disable-next-line
-          console.log('contract '+ id)// eslint-disable-next-line
-        console.log(img.width)
+        let img = document.querySelector(`#Item > img[item-id='${id}']`)
+        debugger
+        img.width = this.original_width
+        img.height = this.original_height
       }
 
     }
