@@ -1,9 +1,9 @@
 <template>
-  <div id="Item"  
+  <div id="Item" :item-id='thing.id' 
     @mouseover="mouseIn(thing.id)"
     @mouseleave="mouseOut(thing.id)">
     <p class="title">{{ thing.name }}</p>
-    <img v-img="{title: thing.name}" :item-id='thing.id' :src="require(`@/assets/${thing.img}`)" :alt="`Imagen de ${thing.name}`" >
+    <img v-img="{title: thing.name}" class="img" :src="require(`@/assets/${thing.img}`)" :alt="`Imagen de ${thing.name}`" >
     <p class="description">{{ thing.description }}</p>
 
     
@@ -43,42 +43,38 @@ export default {
     },
     data:()=> {
       return {img_amplified: false,//It'll be used to set wheather it'll need expansion or not
-              original_width: 0,
-              original_height: 0,
+              original_padding: 0,
       }
     },
     methods:{
       mouseIn(id){
         if(!this.img_amplified){// eslint-disable-next-line
           console.log('in '+ id)
-          setTimeout(this.expand(id),5000)
+          this.expand(id)
           this.img_amplified=true
         }
       },
       mouseOut(id){
         if(this.img_amplified){// eslint-disable-next-line
           console.log('out '+ id)
-          setTimeout(this.contract(id),5000)
+          this.contract(id)
           this.img_amplified=false
         }
       },
       expand(id){
-        let img = document.querySelector(`#Item > img[item-id='${id}']`)
-        this.original_width = img.width
-        debugger
-        console.log('id '+id+' antes')
-        console.log('img.width '+img.width)
-        document.querySelector(`#Item > img[item-id='${id}']`).width = this.original_width * 2
-        console.log('id '+id+' despues')
-        console.log('img.width '+img.width)
-        this.original_height = img.height
-        
+        let img = document.querySelector(`#Item[item-id='${id}'] > img`)
+        img.style.padding = "0 2.5em"
+        img.style.width = "70%"
+        setTimeout(()=>img.style.marginBottom="-10px",5000)
+        img.style.padding = "0 1.5em"
+        img.style.width = "90%"
+        img.style.marginBottom="-16px"
       },
       contract(id){
-        let img = document.querySelector(`#Item > img[item-id='${id}']`)
-        debugger
-        img.width = this.original_width
-        img.height = this.original_height
+        let img = document.querySelector(`#Item[item-id='${id}'] > img`)
+        img.style.padding = ""
+        img.style.width = ""
+        img.style.marginBottom=""
       }
 
     }
@@ -99,7 +95,9 @@ export default {
   margin: 5px unset 10px 10px;
 }
 
-img{
+.img{
+  display: block;
+  margin: auto;
   padding: 0 3em;
 }
 
