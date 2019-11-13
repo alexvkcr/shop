@@ -63,18 +63,11 @@ export default {
       },
       expand(id){
         let img = document.querySelector(`#Item[item-id='${id}'] > img`)
-        img.style.padding = "0 2.5em"
-        img.style.width = "70%"
-        setTimeout(()=>img.style.marginBottom="-10px",5000)
-        img.style.padding = "0 1.5em"
-        img.style.width = "90%"
-        img.style.marginBottom="-16px"
+        img.style.transform ="scale(1.2,1.2)"
       },
       contract(id){
         let img = document.querySelector(`#Item[item-id='${id}'] > img`)
-        img.style.padding = ""
-        img.style.width = ""
-        img.style.marginBottom=""
+        img.style.transform ="scale(1,1)"
       }
 
     }
