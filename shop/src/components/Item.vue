@@ -48,15 +48,13 @@ export default {
     },
     methods:{
       mouseIn(id){
-        if(!this.img_amplified){// eslint-disable-next-line
-          console.log('in '+ id)
+        if(!this.img_amplified){
           this.expand(id)
           this.img_amplified=true
         }
       },
       mouseOut(id){
-        if(this.img_amplified){// eslint-disable-next-line
-          console.log('out '+ id)
+        if(this.img_amplified){
           this.contract(id)
           this.img_amplified=false
         }
