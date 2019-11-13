@@ -61,7 +61,8 @@ export default {
       },
       expand(id){
         let img = document.querySelector(`#Item[item-id='${id}'] > img`)
-        img.style.transform ="scale(1.2,1.2)"
+        //img.style.transitionTimingFunction = "cubic-bezier(1,.07,0,-0.05)"
+        img.style.transform = "scale(1.2,1.2)"
       },
       contract(id){
         let img = document.querySelector(`#Item[item-id='${id}'] > img`)
@@ -90,6 +91,7 @@ export default {
   display: block;
   margin: auto;
   padding: 0 3em;
+  transition: transform 3s cubic-bezier(.15,1.52,.76,1.93)
 }
 
 .description{
