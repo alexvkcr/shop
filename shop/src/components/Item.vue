@@ -84,14 +84,14 @@ export default {
 }
 .title{
   text-align: center;
-  margin: 5px unset 10px 10px;
+  margin: 5px auto 10px 10px;
 }
 
 .img{
   display: block;
   margin: auto;
   padding: 0 3em;
-  transition: transform 3s cubic-bezier(.15,1.52,.76,1.93)
+  transition: transform 3s cubic-bezier(.19,1.95,.43,.48)
 }
 
 .description{
