@@ -44,7 +44,7 @@ export default {
 
 div .menu-list a{
   padding: 0.5em 0.1em;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 @media screen and (min-width: 490px) {
