@@ -25,7 +25,7 @@
 <script>
 
 export default {
-  name: 'Items',
+  name: 'Item',
   props: {
     thing: {
         id: String,
