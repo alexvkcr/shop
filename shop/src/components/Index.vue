@@ -1,5 +1,8 @@
 <template>
   <div id="Index">
+    <b-message title="Danger" type="is-danger" aria-close-label="Close message">
+            Cuidado, los productos de esta tienda tienen sabores altamente adictivos 
+    </b-message>
     <img class="indexImg img1" :src="require(`@/assets/img/pretzel.jpg`)" alt="Imagen de Pretzel" >
   </div>
 </template>
@@ -13,17 +16,20 @@ export default {
 
 <style>
 #Index {  
-  display: block;
   overflow-x: hidden;
 }
 .indexImg{
   display: inline-block;
   width: 80vw;
   height: 20vh;
-  margin: auto auto auto 12%;
+  margin-left: 12%;
   padding: 0 3em;
+  padding-right: auto;
   animation-duration: 1s;
   animation-name: slidein;
+}
+article.message{
+  display: inline-block;
 }
 
 @keyframes slidein {
@@ -43,7 +49,9 @@ export default {
     display: block;
     width: 15vw;
     height: 15vw;
-    margin: auto auto auto 12%;
+    margin-left: 12%;
+    padding: 0 3em;
+    padding-right: auto;
   }
   @keyframes slidein {
     from {
