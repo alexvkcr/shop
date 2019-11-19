@@ -1,6 +1,6 @@
 <template>
   <div id="Index">
-    <img class="img" :src="require(`@/assets/img/pretzel.jpg`)" alt="Imagen de Pretzel" >
+    <img class="indexImg img1" :src="require(`@/assets/img/pretzel.jpg`)" alt="Imagen de Pretzel" >
   </div>
 </template>
 
@@ -13,18 +13,55 @@ export default {
 
 <style>
 #Index {  
+    overflow-x: hidden;
 }
-.img{
+.indexImg{
   display: block;
   width: 80vw;
-  margin: auto;
+  height: 20vh;
+  margin: auto auto auto 12%;
   padding: 0 3em;
-  transform: scale(1.2,1.2);
-  transition: transform 3s cubic-bezier(.19,1.95,.43,.48)
 }
-@media screen and (min-width: 490px) {
-  .img{
-    width: 60vw;
+.img1{
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100vw;
   }
+  30% {
+    margin: auto auto auto 12%;
+  }
+
+  to {
+    margin: auto auto auto 12%;
+    background: white;
+  }
+}
+
+
+@media screen and (min-width: 490px) {
+  .indexImg{
+    display: block;
+    width: 30vw;
+    height: 30vw;
+    margin: auto auto auto 12%;
+  }
+  @keyframes slidein {
+    from {
+      margin-left: 100vw;
+    }
+    30% {
+      margin: auto auto auto 12%;
+    }
+
+    to {
+      margin: auto auto auto 12%;
+      background: white;
+    }
+  }
+  
 }
 </style>
