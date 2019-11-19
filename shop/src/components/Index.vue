@@ -13,26 +13,22 @@ export default {
 
 <style>
 #Index {  
-    overflow-x: hidden;
+  display: block;
+  overflow-x: hidden;
 }
 .indexImg{
-  display: block;
+  display: inline-block;
   width: 80vw;
   height: 20vh;
   margin: auto auto auto 12%;
   padding: 0 3em;
-}
-.img1{
-  animation-duration: 3s;
+  animation-duration: 1s;
   animation-name: slidein;
 }
 
 @keyframes slidein {
   from {
     margin-left: 100vw;
-  }
-  30% {
-    margin: auto auto auto 12%;
   }
 
   to {
@@ -45,21 +41,17 @@ export default {
 @media screen and (min-width: 490px) {
   .indexImg{
     display: block;
-    width: 30vw;
-    height: 30vw;
+    width: 15vw;
+    height: 15vw;
     margin: auto auto auto 12%;
   }
   @keyframes slidein {
     from {
       margin-left: 100vw;
     }
-    30% {
-      margin: auto auto auto 12%;
-    }
-
     to {
+      background: linear-gradient(140deg, #ffffff, #ffffff, #ffffff);
       margin: auto auto auto 12%;
-      background: white;
     }
   }
   
