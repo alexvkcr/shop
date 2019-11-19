@@ -4,6 +4,7 @@
             Cuidado, los productos de esta tienda tienen sabores altamente adictivos 
     </b-message>
     <img class="indexImg img1" :src="require(`@/assets/img/pretzel.jpg`)" alt="Imagen de Pretzel" >
+    <span>para llevar</span>
   </div>
 </template>
 
@@ -16,6 +17,7 @@ export default {
 
 <style>
 #Index {  
+  display: flex;
   overflow-x: hidden;
 }
 .indexImg{
@@ -29,7 +31,7 @@ export default {
   animation-name: slidein;
 }
 article.message{
-  display: inline-block;
+  display: block;
 }
 
 @keyframes slidein {
