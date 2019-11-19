@@ -39,7 +39,8 @@ export default {
 }
 
 .category{
-  margin: 1vh
+  margin: 1vh;
+  overflow-x: hidden;
 }
 
 div .menu-list a{
