@@ -62,7 +62,7 @@ export default {
 @media screen and (min-width: 490px) {
   #app {
     grid-template-columns: 150px calc(100vw - 150px);
-    grid-template-rows: 10vh 65vh 25vh;
+    grid-template-rows: 11vh 74vh 15vh;
     grid-template-areas: 
       "header header"
       "sidebar main"
