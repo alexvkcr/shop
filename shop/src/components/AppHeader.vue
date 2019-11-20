@@ -13,7 +13,7 @@
             </b-icon>
       </div>
       
-    header
+    ¡Bollería para llevar!
   </div>
 </template>
 
