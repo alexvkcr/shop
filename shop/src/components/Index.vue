@@ -1,6 +1,8 @@
 <template>
   <div id="Index">
-    <span class="notLogged">INICIA SESIÓN PARA HACER TU RESERVA ONLINE</span>
+    <b-message type="is-info" has-icon>
+            INICIA SESIÓN PARA HACER TU RESERVA ONLINE
+        </b-message>
     <img class="indexImg img1" :src="require(`@/assets/img/pretzel.jpg`)" alt="Imagen de Pretzel" >
     <span>La mejor bollería de todo Arganda</span>
   </div>
@@ -17,11 +19,8 @@ export default {
 #Index {  
   overflow-x: hidden;
 }
-.notLogged{
-  display: block;
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
+#Index article.logged{
+  display: none;
 }
 .indexImg{
   display: inline-block;
