@@ -1,10 +1,8 @@
 <template>
   <div id="Index">
-    <b-message title="Danger" type="is-danger" aria-close-label="Close message">
-            Cuidado, los productos de esta tienda tienen sabores altamente adictivos 
-    </b-message>
+    <span class="notLogged">INICIA SESIÓN PARA HACER TU RESERVA ONLINE</span>
     <img class="indexImg img1" :src="require(`@/assets/img/pretzel.jpg`)" alt="Imagen de Pretzel" >
-    <span>para llevar</span>
+    <span>La mejor bollería de todo Arganda</span>
   </div>
 </template>
 
@@ -17,8 +15,13 @@ export default {
 
 <style>
 #Index {  
-  display: flex;
   overflow-x: hidden;
+}
+.notLogged{
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
 .indexImg{
   display: inline-block;
@@ -51,7 +54,7 @@ article.message{
     display: block;
     width: 15vw;
     height: 15vw;
-    margin-left: 12%;
+    margin-left: 40%;
     padding: 0 3em;
     padding-right: auto;
   }
@@ -61,7 +64,7 @@ article.message{
     }
     to {
       background: linear-gradient(140deg, #ffffff, #ffffff, #ffffff);
-      margin: auto auto auto 12%;
+      margin: auto auto auto 40%;
     }
   }
   
