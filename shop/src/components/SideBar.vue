@@ -35,22 +35,21 @@ export default {
 <style>
 #SideBar {
   display: none;
-  padding: 1px 10px;
-}
-
-.category{
-  margin: 1vh;
-  overflow-x: hidden;
-}
-
-div .menu-list a{
-  padding: 0.5em 0.1em;
-  font-size: 1rem;
 }
 
 @media screen and (min-width: 490px) {
   #SideBar {
     display: unset;
+    padding: 1px 10px;
+  }
+  .category{
+    margin: 1vh;
+    overflow-x: hidden;
+  }
+
+  div .menu-list a{
+    padding: 0.5em 0.1em;
+    font-size: 1rem;
   }
 }
 </style>

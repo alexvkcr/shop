@@ -1,6 +1,6 @@
 <template>
   <div id="AppHeader">
-      <div class="icon-container">
+      <div @click="showSideBar()" class="icon-container iconSideBar">
       <b-icon   class="colored lateral-icon-left"
                 icon="view-headline"
                 size="is-medium">
@@ -68,6 +68,10 @@ export default {
             hasModalCard: true,
             customClass: 'custom-class custom-class-2'
         })
+    },
+    showSideBar(){
+      let iconSideBar = document.querySelector('#SideBar')
+      //Next create a modal div that overlays everything and acts as a touchable sidebar
     }
   }
 }
