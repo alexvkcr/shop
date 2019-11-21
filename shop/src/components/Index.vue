@@ -1,9 +1,11 @@
 <template>
   <div id="Index">
     <b-message type="is-info" has-icon>
-            INICIA SESIÓN PARA HACER TU RESERVA ONLINE
-        </b-message>
-    <img class="indexImg img1" :src="require(`@/assets/img/pretzel.jpg`)" alt="Imagen de Pretzel" >
+      INICIA SESIÓN PARA HACER TU RESERVA ONLINE
+    </b-message>
+    <transition name="fade">
+      <img v-if="showImg" class="indexImg img1" :src="require(`@/assets/img/pretzel.jpg`)" alt="Imagen de Pretzel" >
+    </transition>
     <span>La mejor bollería de todo Arganda</span>
   </div>
 </template>
@@ -11,7 +13,15 @@
 <script>
 
 export default {
-  name: 'Index'
+  name: 'Index',
+  data: ()=>{
+    return {
+      showImg: true
+      }
+  },
+  created(){
+    setTimeout(()=> this.showImg = false , 2500)//This makes it dissapear after 2.5 secs
+  }
 }
 </script>
 
@@ -29,7 +39,7 @@ export default {
   margin-left: 12%;
   padding: 0 3em;
   padding-right: auto;
-  animation-duration: 1s;
+  animation-duration: 1.33s;
   animation-name: slidein;
 }
 article.message{
@@ -47,6 +57,14 @@ article.message{
   }
 }
 
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+
+.fade-enter, .fade-leave-to  {
+  opacity: 0;
+}
+
 
 @media screen and (min-width: 490px) {
   .indexImg{
@@ -61,9 +79,9 @@ article.message{
     from {
       margin-left: 100vw;
     }
-    to {
+    to{
       background: linear-gradient(140deg, #ffffff, #ffffff, #ffffff);
-      margin: auto auto auto 40%;
+      margin: auto auto auto 33%;
     }
   }
   
