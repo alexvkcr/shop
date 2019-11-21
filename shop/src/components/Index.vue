@@ -51,9 +51,9 @@ article.message{
 @media screen and (min-width: 490px) {
   .indexImg{
     display: block;
-    width: 15vw;
-    height: 15vw;
-    margin-left: 40%;
+    width: 25vw;
+    height: 20vw;
+    margin-left: 33%;
     padding: 0 3em;
     padding-right: auto;
   }
