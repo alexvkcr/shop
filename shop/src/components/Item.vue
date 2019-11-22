@@ -1,5 +1,6 @@
 <template>
   <div id="Item" :item-id='thing.id' 
+    @click="goToItem(thing.id, $event)"
     @mouseover="mouseIn(thing.id)"
     @mouseleave="mouseOut(thing.id)">
     <p class="title">{{ thing.name }}</p>
@@ -67,6 +68,11 @@ export default {
       contract(id){
         let img = document.querySelector(`#Item[item-id='${id}'] > img`)
         img.style.transform ="scale(1,1)"
+      },
+      goToItem(id, event){
+        if (event.path[0].className && event.path[0].className != 'img') { //Clicked Item and NOT on the img
+          this.$router.push({ name: 'item', path: `/item/${id}`})
+        }
       }
 
     }
