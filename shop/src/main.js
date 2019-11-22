@@ -10,6 +10,7 @@ import VueImg from 'v-img'
 
 import Index from './components/Index.vue'
 import Items from './components/Items.vue'
+import ItemPage from './components/ItemPage.vue'
 import Headquarters from './components/Headquarters.vue'
 
 Vue.config.productionTip = false
@@ -39,7 +40,8 @@ const store = new Vuex.Store({
 const routes = [
     { name: 'index', path: '/', component: Index },
     { name: 'items', path: '/items', component: Items },
-    { name: 'headquarters', path: '/headquarters', component: Headquarters }
+    { name: 'headquarters', path: '/headquarters', component: Headquarters },
+    { name: 'item', path: '/item/:itemId', component: ItemPage }
 ]
 
 const router = new VueRouter({
