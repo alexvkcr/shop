@@ -53,6 +53,7 @@ export default {
 }
 .main{
   grid-area: main;
+  overflow-x: hidden;
   overflow-y:auto;
   padding: 10px;
 }
@@ -68,6 +69,9 @@ export default {
       "header header"
       "sidebar main"
       "footer footer";
+  }
+  .main{
+    overflow-x: unset;
   }
 }
 /*Section for the custom scrollbar*/

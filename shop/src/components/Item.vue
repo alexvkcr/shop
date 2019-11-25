@@ -81,12 +81,14 @@ export default {
 
 <style>
 #Item {
-  width: 20em;
-  max-width: 70vw;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: unset;
+  margin: unset; 
   background-color: #fafafa;  
   border-radius: 7%;
   border: 1px solid #ededed;
-  margin:0 10px 10px; 
+
 }
 .title{
   text-align: center;
@@ -115,5 +117,13 @@ export default {
 .b-tooltip.is-top.is-multiline.is-small:after{
   color: white; 
   background: #23d160;
+}
+
+@media screen and (min-width: 490px) {
+  #Item {
+    max-width: 70vw;
+    width: 20em;
+    margin:0 10px 10px;
+  }
 }
 </style>

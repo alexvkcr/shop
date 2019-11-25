@@ -29,11 +29,16 @@ export default {
 </script>
 
 <style>
+#Items {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  padding: 10px;
+}
+@media screen and (min-width: 490px) {
   #Items {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
-    align-content: space-around;
     margin-right: 2.15vw;
+  }
 }
 </style>
