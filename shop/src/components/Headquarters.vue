@@ -23,7 +23,7 @@
 
 export default {
   name: 'Headquarters',
-  data: function(){
+  data: ()=>{
     return {
       markers: [{position: {lat:40.301769, lng:-3.442696}}]
     }
