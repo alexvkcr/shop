@@ -15,6 +15,11 @@ export default (app, http) => {
         res.json({ msg: getItems() });
     });
 
+    app.get('/item/:id', (req, res) => {
+        let itemId = req.params.id
+        res.json({ msg: getItem(itemId) });
+    });
+
     //POST
     app.post('/bar', (req, res) => {
         res.json(req.body);
@@ -43,4 +48,9 @@ function getItems() {
     items.push(Object.assign({}, item, { id: 17, name: 'Palmera', description: 'de chocolate', allergens: ['Gluten'], price: 30, img: 'img/palmera.jpg' }))
     items.push(Object.assign({}, item, { id: 18, name: 'Palmera', description: 'de chocolate', allergens: ['Gluten'], price: 30, img: 'img/palmera.jpg' }))
     return items
+}
+
+function getItem(itemId) {
+    let item = { id: 0, name: '', description: '', allergens: [], price: '', img: '' }
+    return Object.assign({}, item, { id: 1, name: 'Bollito', description: 'de Crema', allergens: ['Gluten'], price: 30, img: 'img/palmera.jpg' })
 }

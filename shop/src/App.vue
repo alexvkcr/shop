@@ -18,6 +18,7 @@ const api = "localhost:3000/"
 
 export const ShopConstants = Object.freeze({
     API_ITEMS: `${api}items`,
+    API_ITEM: `${api}items`,
 });
 
 export default {
