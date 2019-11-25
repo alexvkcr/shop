@@ -20,7 +20,7 @@ export default {
       items: null
     }
   },
-  mounted () {
+  beforeCreate () {
     axios
       .get(ShopConstants.API_ITEMS || "http://localhost:3000/items")
       .then(response => (this.items= response.data.msg))
