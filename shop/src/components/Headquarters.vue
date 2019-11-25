@@ -1,6 +1,5 @@
 <template>
   <div id="Headquarters">
-    Puedes encontrarnos aquí
     <GmapMap
       :center="{lat:40.301769, lng:-3.442696}"
       :zoom="14"
@@ -16,6 +15,8 @@
         @click="center=m.position">
       </GmapMarker>
     </GmapMap>
+    <p class="enhanced">Aquí es donde debes recoger tus pedidos</p>
+    <p class="enhanced bigger">Estaremos encantados de atenderte</p>
   </div>
 </template>
 
@@ -39,8 +40,13 @@ export default {
   left: 20px;
 }
 
-@media screen and (min-width: 321px) {
-  .vue-map {;
-  }
+.enhanced{
+  font-weight: bold;
+  font-size: 16px;
+  margin: 10px;
+}
+
+.bigger{
+  font-size: 20px;
 }
 </style>
