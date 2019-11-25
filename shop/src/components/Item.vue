@@ -71,7 +71,7 @@ export default {
       },
       goToItem(id, event){
         if (event.path[0].className && event.path[0].className != 'img') { //Clicked Item and NOT on the img
-          this.$router.push({ name: 'item', path: `/item/${id}`})
+          this.$router.push({ name: 'item', params: { itemId: id } })
         }
       }
 

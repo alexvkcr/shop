@@ -1,15 +1,20 @@
 <template>
-  <div id="ItemPage" :item-page-id='thing.id'>
-    <p class="">HOLA{{ thing.name }}</p>
+  <div id="ItemPage" >
+    <h2 class="titleItem">{{thing.name}}</h2>
   </div>
 </template>
 
 <script>
+import ShopConstants from '../App'
+
+const axios = require('axios');
 
 export default {
   name: 'ItemPage',
-  props: {
-    thing: {
+  data:()=> {
+    return {
+      itemId: Number,
+      thing: {
         id: String,
         name: String,
         description: String,
@@ -22,18 +27,30 @@ export default {
         price: Number,
         img: String
         }
-    },
-    data:()=> {
-      return {
-      }
-    },
-    methods:{
     }
+  },
+  beforeCreated () {
+    this.itemId = this.$route.params.itemId 
+  },
+  created () {
+    axios
+      .get(ShopConstants.API_ITEM+this.itemId  || `http://localhost:3000/item/${this.itemId}`)
+      .then(response => (this.thing= response.data.msg))
+  },
+  methods:{
+
+  }
 }
 </script>
 
 <style>
 #ItemPage {
   
+}
+.titleItem{
+  font-weight: bold;
+  font-size: 20px;
+  margin: 10px auto;
+  margin-left: 45%
 }
 </style>
