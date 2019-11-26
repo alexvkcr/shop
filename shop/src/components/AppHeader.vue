@@ -70,7 +70,8 @@ export default {
         })
     },
     showSideBar(){
-      let iconSideBar = document.querySelector('#SideBar')
+      let sideBar = document.querySelector('#SideBar')
+      sideBar.style.display = 'unset'
       //Next create a modal div that overlays everything and acts as a touchable sidebar
     }
   }

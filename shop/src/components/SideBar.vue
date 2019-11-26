@@ -13,6 +13,7 @@
         </div>
       </b-menu-list>
     </b-menu>
+    <button type="button" class="modal-close is-large"></button>
   </div>
 </template>
 
@@ -35,13 +36,43 @@ export default {
 <style>
 #SideBar {
   display: none;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(10, 10, 10, 0.86); /* Black w/ opacity */
+}
+.menu{
+  background-color: #fefefe;
+  border: 1px solid #888;
+  width: 80%;
+  height:100%;
+}
+.category{
+  margin: 1vh 10vw 0 5vw;
+  overflow-x: hidden;
 }
 
 @media screen and (min-width: 490px) {
   #SideBar {
     display: unset;
     padding: 1px 10px;
+    position: unset; /* Stay in place */
+    z-index: unset; /* Sit on top */
+    padding-top: unset; /* Location of the box */
+    background-color: unset; /* Black w/ opacity */
+    width:unset;
   }
+  .menu{
+    background-color: unset;
+    border: unset;
+    width: unset;
+  }
+
   .category{
     margin: 1vh;
     overflow-x: hidden;
