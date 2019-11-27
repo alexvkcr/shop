@@ -13,7 +13,7 @@
         </div>
       </b-menu-list>
     </b-menu>
-    <button type="button" class="modal-close is-large"></button>
+    <button @click="hideSideBar()" type="button" class="modal-close is-large botonCerrar"></button>
   </div>
 </template>
 
@@ -23,6 +23,11 @@ export default {
   methods: {
     clickMe() {// eslint-disable-next-line
       console.log("Clicked!!");
+    },
+    hideSideBar(){
+      let sideBar = document.querySelector('#SideBar')
+      sideBar.style.display = 'none'
+      //Next create a modal div that overlays everything and acts as a touchable sidebar
     }
   },
   computed: {
@@ -46,15 +51,21 @@ export default {
   background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
 }
 .menu{
-  padding-top: 100px; /* Location of the box */
+  padding-top: 15vh; 
   background-color: #fefefe;
   border: 1px solid #888;
   width: 80%;
   height:100%;
 }
+.menu .menu-label{
+  padding-left: 3vw;
+}
 .category{
   margin: 1vh 10vw 0 5vw;
   overflow-x: hidden;
+}
+.botonCerrar{
+  display:unset;
 }
 
 @media screen and (min-width: 490px) {
@@ -72,7 +83,9 @@ export default {
     border: unset;
     width: unset;
   }
-
+  .menu .menu-label{
+    padding-left: unset;
+  }
   .category{
     margin: 1vh;
     overflow-x: hidden;
@@ -81,6 +94,9 @@ export default {
   div .menu-list a{
     padding: 0.5em 0.1em;
     font-size: 1rem;
+  }
+  .botonCerrar{
+    display:hidden;
   }
 }
 </style>
