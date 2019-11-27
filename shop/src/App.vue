@@ -61,6 +61,9 @@ export default {
   grid-area: footer;
   padding: 3rem 1rem 1rem !important;
 }
+div.modal-background{
+  background-color: rgba(0,0,0,0.6);
+}
 @media screen and (min-width: 490px) {
   #app {
     grid-template-columns: 150px calc(100vw - 150px);

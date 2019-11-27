@@ -38,15 +38,15 @@ export default {
   display: none;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(10, 10, 10, 0.86); /* Black w/ opacity */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
 }
 .menu{
+  padding-top: 100px; /* Location of the box */
   background-color: #fefefe;
   border: 1px solid #888;
   width: 80%;
