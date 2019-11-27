@@ -95,8 +95,8 @@ export default {
     padding: 0.5em 0.1em;
     font-size: 1rem;
   }
-  .botonCerrar{
-    display:hidden;
+  button.botonCerrar{
+    display: none;
   }
 }
 </style>
