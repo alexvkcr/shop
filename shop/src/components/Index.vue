@@ -40,7 +40,7 @@ export default {
 }
 .indexCherry{
   position: absolute;
-  top: 200px;
+  top: 180px;
   left: 830px;
   width: 280px;
   height: 220px;
