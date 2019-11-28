@@ -2,7 +2,7 @@
   <footer id="AppFooter">
     <div class="empresa">
       <p>Tienda de comida</p>
-      <p>GUAU</p>
+      <p>Bollería para llevar</p>
     </div>
     <div class="autor">
       <p>Autor: Alejandro Díaz</p>
@@ -33,10 +33,13 @@ export default {
     "empresa autor";
   font-size: 0.8em;
   border-top: 0.2px #cacaca solid;
+  background-color: #3bb78f;
+  background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
 }
 
 .empresa {
   grid-area: empresa;
+  color: #20644E;
 }
 
 .autor {
