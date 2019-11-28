@@ -1,9 +1,9 @@
 <template>
-  <div id="Item" :item-id='thing.id' 
+  <div id="Item" :item-id='thing.id' v-bind:class="{ underlined: img_amplified }" 
     @click="goToItem(thing.id, $event)"
     @mouseover="mouseIn(thing.id)"
     @mouseleave="mouseOut(thing.id)">
-    <p class="title">{{ thing.name }}</p>
+    <p class="title" >{{ thing.name }}</p>
     <img v-img="{title: thing.name}" class="img" :src="require(`@/assets/${thing.img}`)" :alt="`Imagen de ${thing.name}`" >
     <p class="description">{{ thing.description }}</p>
 
@@ -90,9 +90,18 @@ export default {
   border: 1px solid #ededed;
 
 }
+#Item.underlined{
+  border: 1.3px solid #AFDCCD;
+  background-color: #E9EFED;
+
+}
+
 .title{
   text-align: center;
   margin: 5px auto 10px 10px;
+}
+.underlined .title{
+  text-decoration: underline;
 }
 
 .img{
