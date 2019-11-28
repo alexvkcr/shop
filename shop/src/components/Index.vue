@@ -3,9 +3,8 @@
     <b-message type="is-info" has-icon>
       INICIA SESIÓN PARA HACER TU RESERVA ONLINE
     </b-message>
-    <transition name="fade">
-      <img v-if="showImg" class="indexImg img1" :src="require(`@/assets/img/cupcake.jpg`)" alt="Imagen de Pretzel" >
-    </transition>
+    <img class="indexImg img1" :src="require(`@/assets/img/cupcake.jpg`)" alt="Imagen de Cupcake" >
+    <img class="indexCherry img2" :src="require(`@/assets/img/cherry.gif`)" alt="Imagen de Cereza" >
     <span>La mejor bollería de todo Arganda</span>
   </div>
 </template>
@@ -18,9 +17,6 @@ export default {
     return {
       showImg: true
       }
-  },
-  created(){
-    // setTimeout(()=> this.showImg = false , 2500)//This makes it dissapear after 2.5 secs
   }
 }
 </script>
@@ -42,6 +38,15 @@ export default {
   animation-duration: 1.33s;
   animation-name: slidein;
 }
+.indexCherry{
+  position: absolute;
+  top: 200px;
+  left: 830px;
+  width: 280px;
+  height: 220px;
+  animation-duration: 3s;
+  animation-name: dropping;
+}
 article.message{
   display: block;
 }
@@ -56,15 +61,17 @@ article.message{
     background: white;
   }
 }
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .3s;
+@keyframes dropping {
+  from {
+    top: -200px;
+  }
+  50%{
+    top: -200px;
+  }
+  to {  
+    top: 200px;
+  }
 }
-
-.fade-enter, .fade-leave-to  {
-  opacity: 0;
-}
-
 
 @media screen and (min-width: 490px) {
   .indexImg{
