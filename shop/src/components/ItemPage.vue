@@ -4,7 +4,7 @@
     <div class="itemContent">
       <img class="imgLarge" :src="require(`@/assets/${thing.img}`)" :alt="`Imagen de ${thing.name}`" >
       <p class="textItem">{{ thing.description }}</p>
-      <p class="textItem">{{ thing.price }}</p>
+      <p class="textItem">{{ thing.price }}€</p>
     </div>
   </div>
 </template>
