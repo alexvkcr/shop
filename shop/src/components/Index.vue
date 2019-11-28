@@ -4,7 +4,7 @@
       INICIA SESIÓN PARA HACER TU RESERVA ONLINE
     </b-message>
     <transition name="fade">
-      <img v-if="showImg" class="indexImg img1" :src="require(`@/assets/img/pretzel.jpg`)" alt="Imagen de Pretzel" >
+      <img v-if="showImg" class="indexImg img1" :src="require(`@/assets/img/cupcake.jpg`)" alt="Imagen de Pretzel" >
     </transition>
     <span>La mejor bollería de todo Arganda</span>
   </div>
@@ -20,7 +20,7 @@ export default {
       }
   },
   created(){
-    setTimeout(()=> this.showImg = false , 2500)//This makes it dissapear after 2.5 secs
+    // setTimeout(()=> this.showImg = false , 2500)//This makes it dissapear after 2.5 secs
   }
 }
 </script>
@@ -69,9 +69,9 @@ article.message{
 @media screen and (min-width: 490px) {
   .indexImg{
     display: block;
-    width: 25vw;
+    width: 20vw;
     height: 20vw;
-    margin-left: 33%;
+    margin-left: 35%;
     padding: 0 3em;
     padding-right: auto;
   }
