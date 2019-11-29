@@ -60,8 +60,6 @@ export default {
 .titleItem{
   font-weight: bold;
   font-size: 20px;
-  margin: 10px auto;
-  margin-left: 45%
 }
 .itemContent{
   display: flex;
