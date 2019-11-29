@@ -3,8 +3,10 @@
     <h2 class="titleItem">{{thing.name}}</h2>
     <div class="itemContent">
       <img class="imgLarge" :src="require(`@/assets/${thing.img}`)" :alt="`Imagen de ${thing.name}`" >
-      <p class="textItem">{{ thing.description }}</p>
-      <p class="textItem">{{ thing.price }}€</p>
+      <div class="textItem">
+        <p>{{ thing.description }}</p>
+        <p>{{ thing.price }}€</p>
+      </div>
     </div>
   </div>
 </template>
@@ -66,9 +68,6 @@ export default {
   flex-direction: column;
   height: 100%;
 }
-.textItem{
-  margin: 10px auto 0 40px;
-}
 
 @media screen and (min-width: 490px) { 
   #ItemPage{
@@ -79,6 +78,9 @@ export default {
   }
   .imgLarge{
     margin: 10px auto auto 0;
+  }
+  .textItem{
+    margin: 10px auto 0 40px;
   }
 }
 </style>
