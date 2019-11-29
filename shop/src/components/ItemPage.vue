@@ -68,6 +68,9 @@ export default {
   flex-direction: column;
   height: 100%;
 }
+  .textItem{
+    font-size: 16px;
+  }
 
 @media screen and (min-width: 490px) { 
   #ItemPage{
