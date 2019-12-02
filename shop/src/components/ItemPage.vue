@@ -7,8 +7,11 @@
         <p>{{ thing.description }}</p>
         <p>{{ thing.price }}€</p>
       </div>
-      <b-button icon="cart"
-                size="is-medium">
+      <b-button class="cartButton"
+                icon-left="cart"
+                size="is-medium"
+                type="is-success"
+                outlined>
         Añadir al carro
       </b-button>
     </div>
@@ -72,9 +75,13 @@ export default {
   flex-direction: column;
   height: 100%;
 }
-  .textItem{
-    font-size: 16px;
-  }
+
+.textItem{
+  font-size: 16px;
+}
+.cartButton{
+  margin: auto;
+}
 
 @media screen and (min-width: 490px) { 
   #ItemPage{
