@@ -3,8 +3,8 @@
     <b-message type="is-info" has-icon>
       INICIA SESIÓN PARA HACER TU RESERVA ONLINE
     </b-message>
-    <img class="indexImg img1" :src="require(`@/assets/img/cupcake.jpg`)" alt="Imagen de Cupcake" >
-    <img class="indexCherry img2" :src="require(`@/assets/img/cherry.gif`)" alt="Imagen de Cereza" >
+    <img class="indexImg" :src="require(`@/assets/img/cupcake.jpg`)" alt="Imagen de Cupcake" >
+    <img class="indexCherry" :src="require(`@/assets/img/cherry.gif`)" alt="Imagen de Cereza" >
     <span>La mejor bollería de todo Arganda</span>
   </div>
 </template>
