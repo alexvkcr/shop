@@ -7,6 +7,10 @@
         <p>{{ thing.description }}</p>
         <p>{{ thing.price }}€</p>
       </div>
+      <b-button icon="cart"
+                size="is-medium">
+        Añadir al carro
+      </b-button>
     </div>
   </div>
 </template>
