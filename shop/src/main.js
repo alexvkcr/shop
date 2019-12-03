@@ -38,10 +38,10 @@ const store = new Vuex.Store({
 })
 
 const routes = [
-    { name: 'index', path: '/', component: Index },
-    { name: 'items', path: '/items', component: Items },
-    { name: 'headquarters', path: '/headquarters', component: Headquarters },
-    { name: 'item', path: '/item/:itemId', component: ItemPage }
+    { name: 'Index', path: '/', component: Index },
+    { name: 'Items', path: '/items', component: Items },
+    { name: 'Headquarters', path: '/headquarters', component: Headquarters },
+    { name: 'ItemPage', path: '/item/:itemId', component: ItemPage }
 ]
 
 const router = new VueRouter({
