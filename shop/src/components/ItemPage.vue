@@ -43,16 +43,11 @@ export default {
         }
     }
   },
-  beforeCreated () {
-    this.itemId = this.$route.params.itemId 
-  },
   created () {
+    this.itemId = this.$route.params.itemId 
     axios
-      .get(ShopConstants.API_ITEM+this.itemId  || `http://localhost:3000/item/${this.itemId}`)
+      .get(ShopConstants.API_ITEM  || `http://localhost:3000/item/` +this.itemId)
       .then(response => (this.thing= response.data.msg))
-  },
-  methods:{
-
   }
 }
 </script>
