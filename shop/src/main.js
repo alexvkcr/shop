@@ -6,6 +6,8 @@ import Buefy from 'buefy';
 import 'buefy/dist/buefy.css';
 import * as VueGoogleMaps from 'vue2-google-maps';
 import VueImg from 'v-img'
+import { Machine, interpret } from 'xstate';
+
 
 
 import Index from './components/Index.vue'
@@ -50,10 +52,59 @@ const router = new VueRouter({
     routes
 })
 
+// Define machine externally
+const userMachine = Machine({
+    id: 'user',
+    initial: 'idle',
+    states: {
+        idle: {
+            on: {
+                LOG: 'logging'
+            }
+        },
+        logging: {
+            on: {
+                ACCEPTED: 'logged',
+                REJECTED: 'rejected'
+            }
+        },
+        logged: {},
+        rejected: {
+            on: {
+                'RETRY': 'logging'
+            }
+        }
+    }
+});
+
+
 new Vue({
     el: '#app',
     components: { App },
     router,
     store,
     render: h => h(App),
+    created() {
+        // Start service on component creation
+        this.userService
+            .onTransition(state => {
+                this.current = state;
+            })
+            .start();
+    },
+    data() {
+        return {
+            // Interpret machine and store it in data
+            userService: interpret(userMachine),
+
+            // Start with machine's initial state
+            current: userMachine.initialState
+        };
+    },
+    methods: {
+        // Send events to the service
+        send(event) {
+            this.userService.send(event);
+        }
+    }
 }).$mount('#app')
