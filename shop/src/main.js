@@ -91,6 +91,7 @@ new Vue({
                 this.current = state;
             })
             .start();
+        this.$on('sendLog', e => console.log(e))
     },
     data() {
         return {
@@ -100,11 +101,9 @@ new Vue({
             // Start with machine's initial state
             current: userMachine.initialState
         };
-    },
-    methods: {
-        // Send events to the service
-        send(event) {
-            this.userService.send(event);
-        }
     }
-}).$mount('#app')
+}).$mount('#app');
+
+function send(event) {
+    this.userService.send(event);
+}
