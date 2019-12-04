@@ -2,7 +2,7 @@
   <div id="ItemPage">
     <h2 class="titleItem">{{thing.name}}</h2>
     <div class="itemContent">
-      <img class="imgLarge" :src="require(`@/assets/${thing.img}`)" :alt="`Imagen de ${thing.name}`" >
+      <img class="imgLarge" :src="require(`@/assets/${this.thing.img}`)" :alt="`Imagen de ${thing.name}`" >
       <div class="textItem">
         <p>{{ thing.description }}</p>
         <p>{{ thing.price }}€</p>
@@ -39,14 +39,14 @@ export default {
           validator: allergens => (!Array.isArray(allergens)) ? false : ! allergens.some(it => typeof(it)!='string')
         },
         price: Number,
-        img: String
+        img: 'error.png'
         }
     }
   },
   created () {
     this.itemId = this.$route.params.itemId 
     axios
-      .get(ShopConstants.API_ITEM  || `http://localhost:3000/item/` +this.itemId)
+      .get((ShopConstants.API_ITEM  || `http://localhost:3000/item/` )+this.itemId)
       .then(response => (this.thing= response.data.msg))
   }
 }
