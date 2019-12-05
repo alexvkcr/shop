@@ -25,6 +25,9 @@ export default {
   name: 'app',
   components: {
     AppHeader, SideBar, AppFooter
+  },
+  created(){
+    this.$on('send-log', e => console.log('capturado'))
   }
 }
 </script>
