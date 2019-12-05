@@ -10,6 +10,7 @@
 
 <script>
 
+import { Machine, interpret } from 'xstate';
 import AppHeader from './components/AppHeader.vue'
 import SideBar from './components/SideBar.vue'
 import AppFooter from './components/AppFooter.vue'
@@ -21,13 +22,54 @@ export const ShopConstants = Object.freeze({
     API_ITEM: `${api}items`,
 });
 
+
+// Define machine externally
+const userMachine = Machine({
+    id: 'user',
+    initial: 'idle',
+    states: {
+        idle: {
+            on: {
+                LOG: 'logging'
+            }
+        },
+        logging: {
+            on: {
+                ACCEPTED: 'logged',
+                REJECTED: 'rejected'
+            }
+        },
+        logged: {},
+        rejected: {
+            on: {
+                'RETRY': 'logging'
+            }
+        }
+    }
+});
+
 export default {
   name: 'app',
   components: {
     AppHeader, SideBar, AppFooter
   },
-  created(){
-    this.$on('send-log', e => console.log('capturado'))
+  created() {
+      // Start service on component creation
+      this.userService
+          .onTransition(state => {
+              this.current = state;
+          })
+          .start();
+      this.$on('sendLog', e => console.log('logged'))
+  },
+  data() {
+      return {
+          // Interpret machine and store it in data
+          userService: interpret(userMachine),
+
+          // Start with machine's initial state
+          current: userMachine.initialState
+      };
   }
 }
 </script>
