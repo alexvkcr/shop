@@ -53,7 +53,7 @@ export default {
   methods:{
     logUserState(){
       console.log('prev')
-      this.$parent.$emit('send-log')
+      this.$parent.$emit('LOG')
     }
   }
 }

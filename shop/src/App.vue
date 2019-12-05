@@ -54,13 +54,13 @@ export default {
     AppHeader, SideBar, AppFooter
   },
   created() {
-      // Start service on component creation
-      this.userService
-          .onTransition(state => {
-              this.current = state;
-          })
-          .start();
-      this.$on('sendLog', e => console.log('logged'))
+    this.$on('LOG', e => this.send('LOG'))
+    // Start service on component creation
+    this.userService
+        .onTransition(state => {
+            this.current = state;
+        })
+        .start();
   },
   data() {
       return {
@@ -70,7 +70,14 @@ export default {
           // Start with machine's initial state
           current: userMachine.initialState
       };
-  }
+  },
+  methods: {
+      // Send events to the service
+      send(event) {
+        console.warn('arrive')
+        this.userService.send(event);
+      }
+    }
 }
 </script>
 
