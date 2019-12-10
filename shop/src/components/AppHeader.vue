@@ -68,11 +68,15 @@ export default {
             hasModalCard: true,
             customClass: 'custom-class custom-class-2'
         })
+        this.logUserState()
     },
     showSideBar(){
       let sideBar = document.querySelector('#SideBar')
       sideBar.style.display = 'unset'
       //Next create a modal div that overlays everything and acts as a touchable sidebar
+    },
+    logUserState(){
+      this.$parent.$emit('LOG')
     }
   }
 }

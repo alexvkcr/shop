@@ -7,8 +7,7 @@
         <p>{{ thing.description }}</p>
         <p>{{ thing.price }}€</p>
       </div>
-      <b-button @click="logUserState"
-                class="cartButton"
+      <b-button class="cartButton"
                 icon-left="cart"
                 size="is-medium"
                 type="is-success"
@@ -49,12 +48,6 @@ export default {
     axios
       .get((ShopConstants.API_ITEM  || `http://localhost:3000/item/` )+this.itemId)
       .then(response => (this.thing= response.data.msg))
-  },
-  methods:{
-    logUserState(){
-      console.log('prev')
-      this.$parent.$emit('LOG')
-    }
   }
 }
 </script>
