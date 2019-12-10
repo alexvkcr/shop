@@ -108,7 +108,7 @@ export default {
   display: block;
   margin: auto;
   padding: 0 3em;
-  transition: transform 3s cubic-bezier(.19,1.95,.43,.48)
+  transition: transform 1.5s cubic-bezier(0,0.55,1,1.46)
 }
 
 .description{
