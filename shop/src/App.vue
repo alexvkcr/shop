@@ -35,6 +35,7 @@ const userMachine = Machine({
         },
         logging: {
             on: {
+                CANCEL: 'idle',
                 ACCEPTED: 'logged',
                 REJECTED: 'rejected'
             }
