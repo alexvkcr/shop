@@ -1,6 +1,6 @@
 <template>
   <div id="AppHeader">
-      <div @click="showSideBar()" class="icon-container iconSideBar">
+      <div @click="showSideBar()" class="iconSideBar">
       <b-icon   class="colored lateral-icon-left"
                 icon="view-headline"
                 size="is-medium">
@@ -50,7 +50,7 @@ const ModalForm = {
                         <b-checkbox>Remember me</b-checkbox>
                     </section>
                     <footer class="modal-card-foot">
-                        <button class="button" type="button" @click="$parent.close()">Close</button>
+                        <button class="button" type="button" @click="cancelLog()">Cerrar</button>
                         <button class="button is-primary">Login</button>
                     </footer>
                 </div>
@@ -72,11 +72,24 @@ export default {
     },
     showSideBar(){
       let sideBar = document.querySelector('#SideBar')
-      sideBar.style.display = 'unset'
-      //Next create a modal div that overlays everything and acts as a touchable sidebar
+      if(window.matchMedia("(max-width: 490px)").matches){//Mobile first
+         sideBar.style.display = 'unset'
+      }else if(sideBar.style.display == undefined ){//Never have been touched
+        this.$parent.$emit('HIDE_SIDEBAR')
+        sideBar.style.display = 'none'
+      }else if( sideBar.style.display == 'none'){//It has been taken out
+        this.$parent.$emit('BRING_SIDEBAR')
+        sideBar.style.display ='unset'
+      }else{//it has been brought
+        this.$parent.$emit('HIDE_SIDEBAR')
+        sideBar.style.display = 'none'
+      }
     },
     logUserState(){
       this.$parent.$emit('LOG')
+    },
+    cancelLogState(){
+      this.$parent.$emit('CANCEL')
     }
   }
 }
@@ -101,11 +114,5 @@ export default {
 }
 .colored{
   color: #23d160;
-}
-
-@media screen and (max-width: 490px) {
-  .icon-container{
-    display: unset;
-  }
 }
 </style>

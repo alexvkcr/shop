@@ -56,6 +56,18 @@ export default {
   },
   created() {
     this.$on('LOG', e => this.send('LOG'))
+    
+    this.$on('HIDE_SIDEBAR', e => {
+      let app = document.querySelector('#app')
+      app.style.gridTemplateColumns= '100%';
+      app.style.gridTemplateAreas= '"header""main""footer"';
+    })
+
+    this.$on('BRING_SIDEBAR', e => {
+      let app = document.querySelector('#app')
+      app.style.gridTemplateColumns= '150px calc(100vw - 150px)';
+      app.style.gridTemplateAreas= '"header header""sidebar main""footer footer"';
+    })
     // Start service on component creation
     this.userService
         .onTransition(state => {
