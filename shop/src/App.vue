@@ -10,7 +10,6 @@
 
 <script>
 
-import { Machine, interpret } from 'xstate';
 import AppHeader from './components/AppHeader.vue'
 import SideBar from './components/SideBar.vue'
 import AppFooter from './components/AppFooter.vue'
@@ -23,74 +22,11 @@ export const ShopConstants = Object.freeze({
 });
 
 
-// Define machine externally
-const userMachine = Machine({
-    id: 'user',
-    initial: 'idle',
-    states: {
-        idle: {
-            on: {
-                LOG: 'logging'
-            }
-        },
-        logging: {
-            on: {
-                CANCEL: 'idle',
-                ACCEPTED: 'logged',
-                REJECTED: 'rejected'
-            }
-        },
-        logged: {},
-        rejected: {
-            on: {
-                'RETRY': 'logging'
-            }
-        }
-    }
-});
-
 export default {
   name: 'app',
   components: {
     AppHeader, SideBar, AppFooter
-  },
-  created() {
-    this.$on('LOG', e => this.send('LOG'))
-    
-    this.$on('HIDE_SIDEBAR', e => {
-      let app = document.querySelector('#app')
-      app.style.gridTemplateColumns= '100%';
-      app.style.gridTemplateAreas= '"header""main""footer"';
-    })
-
-    this.$on('BRING_SIDEBAR', e => {
-      let app = document.querySelector('#app')
-      app.style.gridTemplateColumns= '150px calc(100vw - 150px)';
-      app.style.gridTemplateAreas= '"header header""sidebar main""footer footer"';
-    })
-    // Start service on component creation
-    this.userService
-        .onTransition(state => {
-            this.current = state;
-        })
-        .start();
-  },
-  data() {
-      return {
-          // Interpret machine and store it in data
-          userService: interpret(userMachine),
-
-          // Start with machine's initial state
-          current: userMachine.initialState
-      };
-  },
-  methods: {
-      // Send events to the service
-      send(event) {
-        console.warn('arrive')
-        this.userService.send(event);
-      }
-    }
+  }
 }
 </script>
 
