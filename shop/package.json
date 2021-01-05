@@ -11,7 +11,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "buefy": "^0.8.10",
     "core-js": "^2.6.11",
     "cors": "^2.8.5",
